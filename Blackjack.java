@@ -56,97 +56,97 @@ public class Blackjack extends JFrame{
 
 	int bet;
 	public Blackjack(){
-		// Initialize all our panels
-		
-		///////////////////  START GAME PANEL //////////////////////////
-		
-		// Setting the font and alignment for the Blackjack text on the start screen. 
-		StartGameText.setFont(new Font("Copperplate Gothic Bold", Font.BOLD, 24));
-		StartGameText.setAlignmentX(Component.CENTER_ALIGNMENT);
-		StartGameText.setBorder(BorderFactory.createEmptyBorder(10,10,25,10));
-		
-		// Setting the Layout of the StartGamePanel 
-		StartGamePanel.setLayout(new BoxLayout(StartGamePanel, BoxLayout.Y_AXIS));
+	// Initialize all our panels
 
-		// Set up the prompt for starting cash
-		CashPrompt.add(namePrompt);
-		CashPrompt.add(playerName);
-		playerName.setPreferredSize(new Dimension(100,25));
-		CashPrompt.add(Text2);
-		Text2.setAlignmentX(Component.CENTER_ALIGNMENT);
-		CashPrompt.add(startingCash);
-		startingCash.setPreferredSize(new Dimension(100,25));
-		//CashPrompt.setBorder(BorderFactory.createEmptyBorder(25,10,10,10));
-		
-		// Add the start and quit buttons
-		Buttons.add(startGame);
-		Buttons.add(leaveGame);
-		
-		// Add the pieces to the panel
-		StartGamePanel.add(StartGameText, BorderLayout.NORTH);
-		StartGamePanel.add(LoadButton);
-		LoadButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		StartGamePanel.add(CashPrompt, BorderLayout.CENTER);
-		StartGamePanel.add(Buttons, BorderLayout.SOUTH);
-		this.add(StartGamePanel);
+	///////////////////  START GAME PANEL //////////////////////////
 
-		////////////////////////// BET PANEL SETUP ///////////////////////////
-		
-		// Sets up the Bet Panel, shown when before every had to collect bets
-		BetPanel.add(betPlaceText); 
-		BetPanel.add(betPlacer);
-		betPlacer.setPreferredSize(new Dimension(100,25));
-		
-		// Add Bet Panel Buttons
-		BetPanelButtons.add(PlaceBetButton);
-		BetPanelButtons.add(WalkAway);
-		
-		// Add the pieces to the frame.
-		BetFrame.add(BetPanel);
-		BetFrame.add(BetPanelButtons, BorderLayout.PAGE_END);
+	// Setting the font and alignment for the Blackjack text on the start screen. 
+	StartGameText.setFont(new Font("Copperplate Gothic Bold", Font.BOLD, 24));
+	StartGameText.setAlignmentX(Component.CENTER_ALIGNMENT);
+	StartGameText.setBorder(BorderFactory.createEmptyBorder(10,10,25,10));
+
+	// Setting the Layout of the StartGamePanel 
+	StartGamePanel.setLayout(new BoxLayout(StartGamePanel, BoxLayout.Y_AXIS));
+
+	// Set up the prompt for starting cash
+	CashPrompt.add(namePrompt);
+	CashPrompt.add(playerName);
+	playerName.setPreferredSize(new Dimension(100,25));
+	CashPrompt.add(Text2);
+	Text2.setAlignmentX(Component.CENTER_ALIGNMENT);
+	CashPrompt.add(startingCash);
+	startingCash.setPreferredSize(new Dimension(100,25));
+	//CashPrompt.setBorder(BorderFactory.createEmptyBorder(25,10,10,10));
+
+	// Add the start and quit buttons
+	Buttons.add(startGame);
+	Buttons.add(leaveGame);
+
+	// Add the pieces to the panel
+	StartGamePanel.add(StartGameText, BorderLayout.NORTH);
+	StartGamePanel.add(LoadButton);
+	LoadButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+	StartGamePanel.add(CashPrompt, BorderLayout.CENTER);
+	StartGamePanel.add(Buttons, BorderLayout.SOUTH);
+	this.add(StartGamePanel);
+
+	////////////////////////// BET PANEL SETUP ///////////////////////////
+
+	// Sets up the Bet Panel, shown when before every had to collect bets
+	BetPanel.add(betPlaceText); 
+	BetPanel.add(betPlacer);
+	betPlacer.setPreferredSize(new Dimension(100,25));
+
+	// Add Bet Panel Buttons
+	BetPanelButtons.add(PlaceBetButton);
+	BetPanelButtons.add(WalkAway);
+
+	// Add the pieces to the frame.
+	BetFrame.add(BetPanel);
+	BetFrame.add(BetPanelButtons, BorderLayout.PAGE_END);
     	BetFrame.setResizable(false);
       	BetFrame.setSize(250,100);
     	BetFrame.setLocationRelativeTo(null);
     	BetFrame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
-		
-		////////////////////////// MAIN GAME PANEL //////////////////////////
-		
-		// GamePanel is the container for the main game
-		GamePanel.setLayout(new BoxLayout(GamePanel, BoxLayout.Y_AXIS));
-		
-		// The Main Header has the dealer label and the Cash/Bet tab
-	    MainHeader.setLayout(new BoxLayout(MainHeader, BoxLayout.X_AXIS));
-	    MainHeader.add(dealerText, GamePanel.getWidth()/2);
-	    MainHeader.add(Box.createHorizontalGlue());
-	    MainHeader.add(cashTab, Component.RIGHT_ALIGNMENT);
-	    
-	    // Dealer label setup
-	    dealerText.setFont(new Font("Serif", Font.BOLD, 16));
-	    dealerText.setBorder(BorderFactory.createEmptyBorder(10, 250, 10, 20));
-	    
-	    // Cash tab as the total cash and total bet for the hand
-	    cashTab.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 10));
-	    cashTab.setLayout(new BoxLayout(cashTab, BoxLayout.Y_AXIS));
-	    cashTab.add(TotalCash);
-	    cashTab.add(TotalBet);
-	    
-	    // Dealer Card panel right now is just a placeholder. Cards will go here
-	    DealerCardPanel.setPreferredSize(new Dimension(550,120));;
-		DealerCardPanel.setBorder(BorderFactory.createLoweredBevelBorder());
-		
-		// See Dealer Card Panel description
-		PlayerCardPanel.setPreferredSize(new Dimension(550,120));
-		PlayerCardPanel.setBorder(BorderFactory.createLoweredBevelBorder());
-		
-		// Player text panel just has the Player label
-		PlayerTextPanel.add(playerText);
-		playerText.setFont(new Font("Serif", Font.BOLD, 16));
-		
-		// Main Button Panel has the Hit, Stand, and Leave table buttons for the game panel
-		// These buttons are initially disabled until a bet is placed.
-		MainButtonPanel.add(hit);
-		MainButtonPanel.add(stand);
-		MainButtonPanel.add(leave);
+
+	////////////////////////// MAIN GAME PANEL //////////////////////////
+
+	// GamePanel is the container for the main game
+	GamePanel.setLayout(new BoxLayout(GamePanel, BoxLayout.Y_AXIS));
+
+	// The Main Header has the dealer label and the Cash/Bet tab
+    	MainHeader.setLayout(new BoxLayout(MainHeader, BoxLayout.X_AXIS));
+    	MainHeader.add(dealerText, GamePanel.getWidth()/2);
+    	MainHeader.add(Box.createHorizontalGlue());
+    	MainHeader.add(cashTab, Component.RIGHT_ALIGNMENT);
+
+    	// Dealer label setup
+    	dealerText.setFont(new Font("Serif", Font.BOLD, 16));
+    	dealerText.setBorder(BorderFactory.createEmptyBorder(10, 250, 10, 20));
+
+    	// Cash tab as the total cash and total bet for the hand
+    	cashTab.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 10));
+    	cashTab.setLayout(new BoxLayout(cashTab, BoxLayout.Y_AXIS));
+    	cashTab.add(TotalCash);
+    	cashTab.add(TotalBet);
+
+    	// Dealer Card panel right now is just a placeholder. Cards will go here
+    	DealerCardPanel.setPreferredSize(new Dimension(550,120));;
+	DealerCardPanel.setBorder(BorderFactory.createLoweredBevelBorder());
+
+	// See Dealer Card Panel description
+	PlayerCardPanel.setPreferredSize(new Dimension(550,120));
+	PlayerCardPanel.setBorder(BorderFactory.createLoweredBevelBorder());
+
+	// Player text panel just has the Player label
+	PlayerTextPanel.add(playerText);
+	playerText.setFont(new Font("Serif", Font.BOLD, 16));
+
+	// Main Button Panel has the Hit, Stand, and Leave table buttons for the game panel
+	// These buttons are initially disabled until a bet is placed.
+	MainButtonPanel.add(hit);
+	MainButtonPanel.add(stand);
+	MainButtonPanel.add(leave);
     	hit.setEnabled(false);
     	stand.setEnabled(false);
     	leave.setEnabled(false);
