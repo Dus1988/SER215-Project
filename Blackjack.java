@@ -259,6 +259,7 @@ public class Blackjack extends JFrame{
 	    hit.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent e) {
 	        	player.hit(Deck.dealCard(player));
+			checkWinner();
 	        }
 	      });
 	    
@@ -278,6 +279,8 @@ public class Blackjack extends JFrame{
 	        	frame.setSize(280,250);
 	        	frame.setLocationRelativeTo(null);
 	        	StartGamePanel.setVisible(true);
+			player.reset();
+			dealer.reset();
 	        }
 	      });
 	    
@@ -389,7 +392,7 @@ public class Blackjack extends JFrame{
 	/**
 	 * Calls the hit method of the dealer and passes them a card.
 	 */
-	public void dealToDealer(){
+	public static void dealToDealer(){
 		dealer.hit(Deck.dealCard(dealer));
 	}
 	
