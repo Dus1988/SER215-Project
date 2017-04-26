@@ -64,9 +64,8 @@ public class Player {
         this.bust = bust;
     }
 
-    public void hit(Card card){
-        this.hand.addCard(card);
-    }
+
+
 
     //getter for isStanding
     public boolean getIsStanding() {
