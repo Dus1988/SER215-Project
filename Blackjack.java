@@ -279,6 +279,8 @@ public class Blackjack extends JFrame{
 	        	frame.setSize(280,250);
 	        	frame.setLocationRelativeTo(null);
 	        	StartGamePanel.setVisible(true);
+			player.reset();
+			dealer.reset();
 	        }
 	      });
 	    
