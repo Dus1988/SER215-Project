@@ -64,9 +64,6 @@ public class Player {
         this.bust = bust;
     }
 
-
-
-
     //getter for isStanding
     public boolean getIsStanding() {
         return isStanding;
