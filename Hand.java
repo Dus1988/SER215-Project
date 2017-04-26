@@ -5,7 +5,7 @@ public class Hand {
     INSTANCE VARIABLES
     ------------------------------------------*/
     private int total;
-    private ArrayList cards;
+    private ArrayList<Card> cards;
     /*
     ------------------------------------------
     END INSTANCE VARIABLES
@@ -15,7 +15,7 @@ public class Hand {
     ------------------------------------------*/
     public Hand() {
         total = 0;
-        cards = new ArrayList(0);
+        cards = new ArrayList<Card>(0);
     }
     /*
     ------------------------------------------
