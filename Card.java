@@ -64,7 +64,7 @@ public class Card
     }
     
     // suit setter
-    public void setSuit(string newSuit) {
+    public void setSuit(String newSuit) {
         this.suit = newSuit;
     }
 
