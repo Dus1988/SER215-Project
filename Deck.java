@@ -7,7 +7,7 @@
 public class Deck
 {
     // instance variables - replace the example below with your own
-    public ArrayList deck = new ArrayList();
+    public ArrayList deck;
 
     /**
      * Generic constructor
