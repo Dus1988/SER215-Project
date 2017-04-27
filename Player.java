@@ -2,7 +2,7 @@
  *  This is the 3rd version of Player for SER215 project
  *
  *  @author Dustin Godin
- *  @version 3.0
+ *  @version 4.0
  *  @date 4/27/2017
  */
 public class Player {
@@ -12,6 +12,7 @@ public class Player {
     protected int money, total;
     public boolean bust, isStanding;
     protected Hand hand;
+    private String name;
     /*------------------------------------------------------------
     END INSTANCE VARIABLES
     ------------------------------------------------------------
@@ -25,15 +26,17 @@ public class Player {
         this.bust = false;
         this.isStanding = false;
         this.hand = new Hand();
+        this.name = "";
     }
 
     //constructor to take in money
-    public Player(int money) {
+    public Player(int money, String name) {
         this.money = money;
         this.total = 0;
         this.bust = false;
         this.isStanding = false;
         this.hand = new Hand();
+        this.name = name;
     }
     /*------------------------------------------------------------
     END CONSTRUCTORS
@@ -80,6 +83,17 @@ public class Player {
     public void setIsStanding(boolean standing) {
         this.isStanding = standing;
     }
+
+    //getter for name
+    public String getName() {
+        return name;
+    }
+
+    //setter for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
     /*------------------------------------------------------------
     END GETTER AND SETTERS
     ------------------------------------------------------------
