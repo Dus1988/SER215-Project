@@ -1,28 +1,36 @@
+
 /**
  * Represents the full deck, composed of 52 Card objects.
  * 
  * @author Zack Valentine
  * @version 1.0
  */
+import java.util.*;
+import java.util.ArrayList;
+
 public class Deck
 {
-    // instance variables - replace the example below with your own
-    public ArrayList deck;
+    // instance variables
+    public ArrayList<Card> deck;
 
     /**
      * Generic constructor
-     */
+
     public Deck()
     {
     }
+         */
 
     /**
      * Constructor
      */
     public Deck()
     {
-        String suitsArray = new String[];
-        suitsArray = "hearts","diamonds","spades","clubs";
+        String suitsArray[] = new String[4];
+        suitsArray[0] = "hearts";
+        suitsArray[1] = "diamonds";
+        suitsArray[2] = "spades";
+        suitsArray[3] = "clubs";
         
         // Loop over the suits to create cards
         for (int i = 0; i < 4; i++) {
@@ -30,20 +38,21 @@ public class Deck
             // Loop over the numbers 1-13 to create cards in the suit
             for (int j = 1; j < 14; j++) {
                 String suit = suitsArray[i];
-                if (j = 1) {
-                    String value = "A";
+                String value;
+                if (j == 1) {
+                    value = "A";
                 }
-                else if (j = 11) {
-                    String value = "J";
+                else if (j == 11) {
+                    value = "J";
                 }
-                else if (j = 12) {
-                    String value = "Q";
+                else if (j == 12) {
+                    value = "Q";
                 }
-                else if (j = 13) {
-                    String value = "K";
+                else if (j == 13) {
+                    value = "K";
                 }
                 else {
-                    String value = j.toString();
+                    value = String.valueOf(j);
                 }
                 Card nextCard = new Card(j,value,suit);
                 deck.add(nextCard);
@@ -55,7 +64,7 @@ public class Deck
     
     /**
      * Shuffle method version 1
-    
+   
     public void Shuffle()
     {
         int newI;
@@ -68,8 +77,8 @@ public class Deck
             temp = deck[i];
             deck[i] = deck[newI];
             deck[newI] = temp;
+        }
     }
-}
    */
   
     /*
@@ -77,11 +86,19 @@ public class Deck
      */
     public void Shuffle() {
         Random rand = new Random();
-        shuffle(deck,rand);
+        Collections.shuffle(deck,rand);
     }
     
 
-    public void refresh() {
+    public Deck refresh() {
         // generate a new Deck object to get a freshly shuffled deck
-        deck = new Deck();
+        return new Deck();
     }
+
+    public Card dealCard(Player player) {
+        // get the card to return
+        Card nextCard = deck.get(0);
+        deck.remove(0);
+        return nextCard;
+    }
+}
