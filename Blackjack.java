@@ -290,6 +290,13 @@ public class Blackjack extends JFrame{
 		    	  leave.setEnabled(true);
 		          BetFrame.dispose();
 		          TotalBet.setText("Bet: " + betPlacer.getText());
+				  player.hit(Deck.dealCard(player));
+				  player.hit(Deck.dealCard(player));
+				  playerHandValue.setText("Hand Value: " + player.getTotal());
+				  checkWinner();
+
+				  dealer.hit(Deck.dealCard(dealer));
+				  dealerHandValue.setText("Hand Value: " + dealer.getTotal());
 	          }
 	        }
 	      });
@@ -364,6 +371,7 @@ public class Blackjack extends JFrame{
 		SaveButton.setVisible(false);
 		winnerText.setText("");
     	TotalCash.setText("Cash: " + player.getMoney());
+		dealerStatus.setText("");
     	
 		//Removes the cards from both dealer and player hands
     	DealerCardPanel.removeAll();
@@ -383,6 +391,8 @@ public class Blackjack extends JFrame{
     	GamePanel.setVisible(true);
     	
     	playerText.setText(playerName.getText());
+
+
 	}
 
 	/**
