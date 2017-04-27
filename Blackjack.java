@@ -6,6 +6,8 @@
  *  @date 4/27/2017
  */
 import javax.swing.*;
+import javax.swing.UIManager.LookAndFeelInfo;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -71,7 +73,6 @@ public class Blackjack extends JFrame{
 	
 	// Constructor 
 	public Blackjack(){
-		
 		// Initialize all our panels
 		
 		///////////////////  START GAME PANEL //////////////////////////
@@ -257,7 +258,7 @@ public class Blackjack extends JFrame{
             // Get rid of the bet screen and show the start screen
 	        	savePlayer(player.getMoney(), player.getName());
 	        	BetFrame.dispose();
-	        	frame.setSize(280,280);
+	        	frame.setSize(260,280);
 	        	frame.setLocationRelativeTo(null);
 	        	StartGamePanel.setVisible(true);
 	        	startingCash.setText("");
@@ -322,7 +323,7 @@ public class Blackjack extends JFrame{
 	   leave.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent e) {
 	            // Get rid of the game screen and show the start screen
-	        	frame.setSize(280,280);
+	        	frame.setSize(260,280);
 	        	frame.setLocationRelativeTo(null);
 	        	StartGamePanel.setVisible(true);
 	        	GamePanel.setVisible(false);
@@ -379,7 +380,7 @@ public class Blackjack extends JFrame{
     	
     	// Hide the start panel and resize the frame
     	StartGamePanel.setVisible(false);
-    	frame.setSize(550,450);
+    	frame.setSize(550,500);
     	frame.setLocationRelativeTo(null);
     	
     	// Show the Bet dialog
@@ -541,7 +542,7 @@ public static void savePlayer(int money, String name){
 		frame.setTitle("Blackjack");
 		frame.setLocation(100, 100);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(280, 280);
+		frame.setSize(260, 280);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 		frame.setResizable(false);
