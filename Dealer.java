@@ -1,3 +1,10 @@
+/**
+ *  This is the 2nd version of Player for SER215 project
+ *
+ *  @author Dustin Godin
+ *  @version 2.0
+ *  @date 4/27/2017
+ */
 public class Dealer extends Player {
     /*--------------------------------------
     START CONSTRUCTORS

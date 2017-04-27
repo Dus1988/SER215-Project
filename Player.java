@@ -1,3 +1,10 @@
+/**
+ *  This is the 3rd version of Player for SER215 project
+ *
+ *  @author Dustin Godin
+ *  @version 3.0
+ *  @date 4/27/2017
+ */
 public class Player {
     /*------------------------------------------------------------
      START INSTANCE VARIABLES

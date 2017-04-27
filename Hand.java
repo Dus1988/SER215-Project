@@ -1,3 +1,10 @@
+/**
+ *  This is the 3rd version of Hand for SER215 project
+ *
+ *  @author Dustin Godin
+ *  @version 3.0
+ *  @date 4/27/2017
+ */
 import java.util.ArrayList;
 
 public class Hand {
