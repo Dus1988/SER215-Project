@@ -125,6 +125,7 @@ public class Blackjack extends JFrame{
 		BetFrame.add(BetPanel);
 		BetFrame.add(BetPanelButtons, BorderLayout.PAGE_END);
     	BetFrame.setResizable(false);
+    	BetFrame.pack();
       	BetFrame.setSize(250,100);
     	BetFrame.setLocationRelativeTo(null);
     	BetFrame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
@@ -258,11 +259,13 @@ public class Blackjack extends JFrame{
             // Get rid of the bet screen and show the start screen
 	        	savePlayer(player.getMoney(), player.getName());
 	        	BetFrame.dispose();
-	        	frame.setSize(260,280);
-	        	frame.setLocationRelativeTo(null);
+	        	GamePanel.setVisible(false);
 	        	StartGamePanel.setVisible(true);
 	        	startingCash.setText("");
 	        	playerName.setText("");
+	        	frame.pack();
+	        	frame.setSize(260,280);
+	        	frame.setLocationRelativeTo(null);
 	        }
 	      });
 	    
@@ -323,10 +326,14 @@ public class Blackjack extends JFrame{
 	   leave.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent e) {
 	            // Get rid of the game screen and show the start screen
+
+	        	StartGamePanel.setVisible(true);
+	        	startingCash.setText(Integer.toString(player.getMoney()));
+	        	playerName.setText(player.getName());
+	        	GamePanel.setVisible(false);
+	        	frame.pack();
 	        	frame.setSize(260,280);
 	        	frame.setLocationRelativeTo(null);
-	        	StartGamePanel.setVisible(true);
-	        	GamePanel.setVisible(false);
 	        	savePlayer(player.getMoney(), player.getName());
 	        }
 	      });
@@ -380,6 +387,7 @@ public class Blackjack extends JFrame{
     	
     	// Hide the start panel and resize the frame
     	StartGamePanel.setVisible(false);
+    	frame.pack();
     	frame.setSize(550,500);
     	frame.setLocationRelativeTo(null);
     	
@@ -542,6 +550,7 @@ public static void savePlayer(int money, String name){
 		frame.setTitle("Blackjack");
 		frame.setLocation(100, 100);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.pack();
 		frame.setSize(260, 280);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
