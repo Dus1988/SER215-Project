@@ -36,6 +36,7 @@ public class Dealer extends Player {
         }
         else {
             this.stand();
+            Blackjack.checkWinner();
         }
     }
 

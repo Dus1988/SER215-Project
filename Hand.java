@@ -1,10 +1,3 @@
-/**
- *  This is the 3rd version of Hand for SER215 project
- *
- *  @author Dustin Godin
- *  @version 3.0
- *  @date 4/27/2017
- */
 import java.util.ArrayList;
 
 public class Hand {
@@ -44,6 +37,8 @@ public class Hand {
     public void calcTotal(){
         int tempTotal = 0;
         for (Card card : cards){
+        	
+        	// If you get an ace, the dealer needs to keep drawing even if they are over 17.
             String cardValue = card.getValue();
             if (cardValue.equals("A") && tempTotal < 10)
                 tempTotal += 11;

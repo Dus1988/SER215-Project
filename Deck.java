@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Deck
 {
     // instance variables
-    public ArrayList<Card> deck;
+    public static ArrayList<Card> deck = new ArrayList<Card>();
 
     /**
      * Generic constructor
@@ -95,7 +95,7 @@ public class Deck
         return new Deck();
     }
 
-    public Card dealCard(Player player) {
+    public static Card dealCard(Player player) {
         // get the card to return
         Card nextCard = deck.get(0);
         deck.remove(0);
