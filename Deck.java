@@ -46,7 +46,7 @@ public class Deck
                     String value = j.toString();
                 }
                 Card nextCard = new Card(j,value,suit);
-                deck.add(newCard);
+                deck.add(nextCard);
             }
     }
     this.Shuffle();
