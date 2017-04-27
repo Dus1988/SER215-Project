@@ -10,12 +10,14 @@ public class Dealer extends Player {
     START CONSTRUCTORS
     --------------------------------------*/
     public Dealer() {
-        super();
+        this.money = 0;
+        this.total = 0;
+        this.bust = false;
+        this.isStanding = false;
+        this.hand = new Hand();
+
     }
 
-    public Dealer(int money) {
-        super(money);
-    }
     /*--------------------------------------
     END CONSTRUCTORS
     --------------------------------------
