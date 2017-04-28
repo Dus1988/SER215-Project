@@ -300,6 +300,9 @@ public class Blackjack extends JFrame{
 				  checkWinner();
 
 				  dealer.hit(Deck.dealCard(dealer));
+			  if(dealer.getTotal() >=17){
+				dealerStatus.setText("Standing");	  
+			  }
 				  dealerHandValue.setText("Hand Value: " + dealer.getTotal());
 	          }
 	        }
