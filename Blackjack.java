@@ -249,7 +249,7 @@ public class Blackjack extends JFrame{
 	    leaveGame.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent e) {
 	          savePlayer(player.getMoney(), player.getName());
-	          frame.dispose(); // closes the game
+	          System.exit(0); // closes the game
 	        }
 	      });
 	    
